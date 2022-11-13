@@ -27,8 +27,18 @@ function displayTemperature(response) {
     windElement.innerHTML = Math.round(response.data.wind.speed);
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
+function search(city) {
+    let apiKey = "3bc520cc14bbdedfd7e45158f2ef0439";
+    let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayTemperature);
+}
+function executeSubmit(event) {
+event.preventDefault();
+let cityInputElement=document.querySelector("#city-name");
+search(cityInputElement.value);
+}
+search("Kyiv");
 
-let apiKey="3bc520cc14bbdedfd7e45158f2ef0439";
-let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=${apiKey}&units=metric`;
-console.log(apiUrl);
-axios.get(apiUrl).then(displayTemperature);
+
+let form=document.querySelector("#search-city-form");
+form.addEventListener("submit",executeSubmit);

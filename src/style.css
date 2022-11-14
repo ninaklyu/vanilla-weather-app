@@ -55,3 +55,8 @@ width: 64px;
     font-size: 16 px;
     top: -33px;
 }
+.weather-temperature .active {
+    color:black;
+    cursor: default;
+    text-decoration: none;
+}

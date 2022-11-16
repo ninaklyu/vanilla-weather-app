@@ -60,3 +60,19 @@ width: 64px;
     cursor: default;
     text-decoration: none;
 }
+.weather-forecast {
+    margin-top: 20px;
+    text-align: center;
+    color: black;
+}
+.weather-forecast-day {
+    font-size: 16px;
+    opacity: 0.7;
+}
+.temperature-min {
+    opacity: 0.7;
+}
+.weather-forecast-temperatures {
+    font-size: 13px;
+  
+}
